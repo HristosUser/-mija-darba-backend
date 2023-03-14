@@ -1,1 +1,1 @@
-# -mija-darba-backend
+# kimija-darba-backend
