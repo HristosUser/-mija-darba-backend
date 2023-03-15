@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+  <title>Pd_forma</title>
+</head>
+<body>
+  <div class='header'>
+    <div class='container'>
+      <div class="bg-header">
+        <div class="header-text">
+          <h1>Esi sveicināts<br>KĻUS</h1>
+        </div>
+        <div class="header-text-sup">
+          <p>Tavas laboratorijas uzskaites sistēma</p>
+        </div>
+          <div class="header-img">
+            <img src="ķīmija.png">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav">
+      <div class="hav-hi">
+        <h1>Ko Tu vēlies darīt<br> šodien?</h1>
+      </div>
+      <div class="nav-sup">
+        <p>Piekļūsti savas skolas laboratorijai vai aplūku publiski<br> pieejamo informāciju un datus par laboratoriju</p>
+      </div>
+      <div class="btn">
+        <a href="form.html" class="nav-btn">Piesliegt</a>
+      </div>
+      <div class="btn-pub">
+        <a href="main.html" class="nav-btn-pub">Piekļūt publiskiem datiem</a>
+      </div>
+  </div>
+  <script>
+    fetch('index.html/vielas.json')
+      .then(response => response.json)
+      .then(cells => fill(cells))
+      .catch(err => console.log(err))
+    
+      function fill(cells) {
+        const values = Object.values(cells)
+        let i =0
+
+        while(i < values.length)
+        {
+          document.getElementById('n' + i).innerText = 
+          values[i].toFixed(2)
+          i++
+        }
+      }
+  </script>
+</body>
+</html>
