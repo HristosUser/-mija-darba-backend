@@ -22,41 +22,235 @@
         <input type="text" placeholder="Search" class="in">
         <div class="btn-hover">
         <div class="btn-all">
-          <a href="#" class="text-btn">Rādīt visu</a>
+          <button onclick="showData('Rādīt_vielas')">Radīt vielas</button>
         </div>          
         <div class="btn-v">
-          <a href="#" class="text-btn">Rādīt vielas</a>
+          <button onclick="showData('data2')">Radīt visu</button>
         </div>
         <div class="btn-a">
-          <a href="#" class="text-btn">Rādīt aprīkojumu</a>
-        </div>
+          <button onclick="showData('Rādīt_aprīkojumu')">Rādīt aprīkojumu</button>
+          </div>
       </div>
     </div>
     <hr> 
   </div>
-  <div class="table">
-    <div class="table-nav">
-      <table>
-        <tr><th>ID</th><th>Nosaukumus</th><th>Tips</th><th>Apakštips</th><th>Skaits</th><th>Svars</th><th>Komentāri</th></tr>
-      </div>
-      <div class="table-cont">
-          <tr><td>KL1042724</td><td>Katalizators</td><td>Aprīkojums</td><td>Trauks</td><td>23</td><td> </td><td>Daži komentāri</td></tr>
-
-          <tr><td>KL1042723</td><td>Birete</td><td>Aprīkojums</td><td>Trauks</td><td>20</td><td> </td><td>Daži komentāri</td></tr>
-
-          <tr><td>KL1042722</td><td>HCl</td><td>Viela</td><td>Skābe</td><td>19</td><td>40</td><td>Daži komentāri</td></tr>
-
-          <tr><td>KL1042721</td><td>Kalba</td><td>Aprīkojums</td><td>Trauks</td><td>20</td><td> </td><td>Daži komentāri</td></tr>
-
-          <tr><td>KL1042720</td><td>Fe</td><td>Viela</td><td>Metāls</td><td>48</td><td>10</td><td>Daži komentāri</td></tr>
-
-          <tr><td>KL1042719</td><td>Na</td><td>Viela</td><td>Metāls</td><td>20</td><td>20</td><td>Daži komentāri</td></tr>
-          </div>
-        </table>
-      </div>
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nosaukums</th>
+          <th>Tips</th>
+          <th>Apakštips</th>
+          <th>Skaits</th>
+          <th>Svars</th>
+          <th>Komentāri</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
     </div>
   </div>
 </div>
-<script src="maim.js"></script>
+
+<script>
+    const Rādīt_vielas = [
+    {
+      "apakstips": "sāls",
+      "daudzums": 100,
+      "id": 2,
+      "komentari": "",
+      "mervienibas": "g",
+      "nosaukums": "Kalcija karbonāts CaCO3",
+      "skaits": 25,
+      "tips": "reaģents"
+    },
+    {
+      "apakstips": "hidroksīds",
+      "daudzums": 50,
+      "id": 3,
+      "komentari": "Šķīdums izvedots un sapildīts 2020.09.23",
+      "mervienibas": "ml",
+      "nosaukums": "NaOH šķīdums 10%",
+      "skaits": 45,
+      "tips": "reaģents"
+    },
+    {
+      "apakstips": "skābe",
+      "daudzums": 100,
+      "id": 4,
+      "komentari": "Šķīdums izvedots un sapildīts 2020.10.21",
+      "mervienibas": "ml",
+      "nosaukums": "Sālsskābes HCl šķīdums 20%",
+      "skaits": 24,
+      "tips": "reaģents"
+    },
+    {
+      "apakstips": "test1",
+      "daudzums": 50,
+      "id": 5,
+      "komentari": "Šķīdums izvedots un sapildīts 2020.09.23",
+      "mervienibas": "ml",
+      "nosaukums": "NaOH šķīdums 10%",
+      "skaits": 45,
+      "tips": "reaģents"
+    },
+    {
+      "apakstips": "hidroksīds",
+      "daudzums": 100,
+      "id": 6,
+      "komentari": "Šķīdums izvedots un sapildīts 2020.10.21",
+      "mervienibas": "ml",
+      "nosaukums": "NaOH šķīdums 20%",
+      "skaits": 413,
+      "tips": "reaģents"
+    },
+    {
+      "apakstips": "test2",
+      "daudzums": 50,
+      "id": 7,
+      "komentari": "Šķīdums izvedots un sapildīts lorem ipsum",
+      "mervienibas": "ml",
+      "nosaukums": "NaOH šķīdums 10%",
+      "skaits": 45,
+      "tips": "reaģents"
+    },
+    {
+      "apakstips": "test2",
+      "daudzums": 5,
+      "id": 8,
+      "komentari": "Šķīdums izvedots un sapildīts lorem ipsum",
+      "mervienibas": "ml",
+      "nosaukums": "Nosaukums lorem ipsum",
+      "skaits": 4,
+      "tips": "reaģents"
+    },
+    {
+      "apakstips": "test2",
+      "daudzums": 5,
+      "id": 9,
+      "komentari": "Šķīdums izvedots un sapildīts lorem ipsum",
+      "mervienibas": "ml",
+      "nosaukums": "Nosaukums lorem ipsum",
+      "skaits": 4,
+      "tips": "reaģents"
+    },
+    {
+      "apakstips": "test2",
+      "daudzums": 5,
+      "id": 10,
+      "komentari": "Šķīdums izvedots un sapildīts lorem ipsum",
+      "mervienibas": "ml",
+      "nosaukums": "Nosaukums lorem ipsum",
+      "skaits": 4,
+      "tips": "reaģents"
+    },
+    {
+      "apakstips": "test2",
+      "daudzums": 5,
+      "id": 11,
+      "komentari": "Šķīdums izvedots un sapildīts lorem ipsum",
+      "mervienibas": "ml",
+      "nosaukums": "Nosaukums lorem ipsum",
+      "skaits": 4,
+      "tips": "reaģents"
+    },
+    {
+      "apakstips": "test2",
+      "daudzums": 5,
+      "id": 12,
+      "komentari": "Šķīdums izvedots un sapildīts lorem ipsum",
+      "mervienibas": "ml",
+      "nosaukums": "Nosaukums lorem ipsum",
+      "skaits": 4,
+      "tips": "reaģents"
+    },
+    {
+      "apakstips": "test2",
+      "daudzums": 5,
+      "id": 13,
+      "komentari": "Šķīdums izvedots un sapildīts lorem ipsum",
+      "mervienibas": "ml",
+      "nosaukums": "Nosaukums lorem ipsum",
+      "skaits": 4,
+      "tips": "reaģents"
+    },
+    {
+      "apakstips": "test2",
+      "daudzums": 5,
+      "id": 14,
+      "komentari": "Šķīdums izvedots un sapildīts lorem ipsum",
+      "mervienibas": "ml",
+      "nosaukums": "Nosaukums lorem ipsum",
+      "skaits": 4,
+      "tips": "reaģents"
+    },
+    {
+      "apakstips": "test2",
+      "daudzums": 5,
+      "id": 15,
+      "komentari": "Šķīdums izvedots un sapildīts lorem ipsum",
+      "mervienibas": "ml",
+      "nosaukums": "Nosaukums lorem ipsum",
+      "skaits": 4,
+      "tips": "reaģents"
+    }
+  ];
+
+const Rādīt_aprīkojumu = [
+    {
+      "apakstips": "mehāniskie svari",
+      "id": 1,
+      "komentari": "",
+      "nosaukums": "Mehāniskie svari QWS",
+      "skaits": 5,
+      "tips": "svari"
+    },
+    {
+      "apakstips": "elektroniskie svari",
+      "id": 2,
+      "komentari": "Darbojas uz 3 AAA tipa baterijām",
+      "nosaukums": "Elektroniskie svari ES-25",
+      "skaits": 15,
+      "tips": "svari"
+    },
+    {
+      "apakstips": "plītiņa",
+      "id": 3,
+      "komentari": "Strāvas vada garums 1m",
+      "nosaukums": "Elektriskā plītīņa",
+      "skaits": 8,
+      "tips": "sildītājs"
+    },
+    {
+      "apakstips": "trauki",
+      "id": 4,
+      "komentari": "Kolbas īpaši lielām vielām",
+      "nosaukums": "Milzīgās kolbas",
+      "skaits": 100,
+      "tips": "trauks"
+    },
+    {
+      "apakstips": "stikls",
+      "id": 5,
+      "komentari": "Viegli plīstoša",
+      "nosaukums": "Stikla mēģene",
+      "skaits": 12,
+      "tips": "trauks"
+    }
+  ]
+
+  const table = document.querySelector("#data-table tbody");
+
+function showData(data) {
+  table.innerHTML = "";
+  eval(data).forEach(row => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<td>${row.id}</td><td>${row.nosaukums}</td><td>${row.tips}</td></td><td>${row.apakstips}</td><td>${row.skaits}</td><td>${row.svars}</td><td>${row.komentari}</td>`;
+    table.appendChild(tr);
+  });
+}
+
+  </script>
 </body>
 </html>

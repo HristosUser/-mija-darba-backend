@@ -40,23 +40,5 @@
         <a href="main.html" class="nav-btn-pub">Piekļūt publiskiem datiem</a>
       </div>
   </div>
-  <script>
-    fetch('index.html/vielas.json')
-      .then(response => response.json)
-      .then(cells => fill(cells))
-      .catch(err => console.log(err))
-    
-      function fill(cells) {
-        const values = Object.values(cells)
-        let i =0
-
-        while(i < values.length)
-        {
-          document.getElementById('n' + i).innerText = 
-          values[i].toFixed(2)
-          i++
-        }
-      }
-  </script>
 </body>
 </html>
